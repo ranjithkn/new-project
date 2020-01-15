@@ -1,0 +1,230 @@
+create database domain;
+
+
+
+use domain;
+
+
+CREATE TABLE  admin(
+  `name` text,
+  `pass` text
+);
+
+INSERT INTO admin VALUES ('admin','admin');
+
+
+
+
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(45) default NULL,
+  `password` varchar(45) default NULL,
+  `email` varchar(45) default NULL,
+  `mobile` varchar(45) default NULL,
+  `address` varchar(45) default NULL,
+  `dob` varchar(45) default NULL,
+  `gender` varchar(45) default NULL,
+  `status` varchar(45) default NULL,
+  `image` longblob,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE fsearch(
+id int(11) NOT NULL auto_increment,
+
+ username text,
+
+ keyword text,
+ 
+dt text,
+
+PRIMARY KEY  (id));
+
+
+
+CREATE TABLE `frequest` (
+  `id` int(11) NOT NULL auto_increment,
+  `requestfrom` varchar(45) default NULL,
+  `requestto` varchar(45) default NULL,
+  `dt` varchar(45) default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE category(
+
+id int(11) NOT NULL auto_increment,
+
+ category VARCHAR(50),
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+CREATE TABLE subcategory(
+
+id int(11) NOT NULL auto_increment,
+
+ category VARCHAR(50),
+
+subcategory VARCHAR(50),
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+CREATE TABLE products(
+
+id int(11) NOT NULL auto_increment,
+
+title text,
+
+category text,
+
+price text,
+
+indexs longtext,
+des longtext,
+
+rank int(11),
+image longblob,
+
+date text,
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+
+
+
+CREATE TABLE backup(
+
+id int(11) NOT NULL auto_increment,
+
+title text,
+
+category text,
+
+price text,
+
+indexs longtext,
+des longtext,
+
+date text,
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+
+
+
+CREATE TABLE `productrecommend` (
+  `id` int(11) NOT NULL auto_increment,
+  `recommendfrom` varchar(45) default NULL,
+  `recommendto` varchar(45) default NULL,
+  `title` varchar(45) default NULL,
+  `category` varchar(45) default NULL,
+`message`  text,
+`dt`  text,
+
+  PRIMARY KEY  (`id`)
+);
+
+
+
+CREATE TABLE matchfound(
+
+id int(11) NOT NULL auto_increment,
+
+user text,
+
+title text,
+
+category text,
+
+keyword text,
+
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+CREATE TABLE frienddelete(
+
+id int(11) NOT NULL auto_increment,
+
+deleteby text,
+
+deleteto text,
+
+reason text,
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+
+
+CREATE TABLE likes(
+
+id int(11) NOT NULL auto_increment,
+
+user text,
+title text,
+category text,
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+CREATE TABLE unlikes(
+
+id int(11) NOT NULL auto_increment,
+
+user text,
+title text,
+category text,
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+CREATE TABLE subgroupfound(
+
+id int(11) NOT NULL auto_increment,
+
+user text,
+
+title text,
+
+category text,
+
+keyword text,
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
